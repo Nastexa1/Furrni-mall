@@ -3,258 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ecomerce-shopin-women</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Furni – Modern Furniture Shop</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body{
+            background: #f7f7f7;
+        }
+
+        /* NAVBAR */
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 8%;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        nav h1{
+            font-size: 28px;
+            font-weight: 700;
+            color: #2b2b2b;
+        }
+
+        nav ul{
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li a{
+            text-decoration: none;
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover,
+        #active{
+            color: #5a2ff6;
+        }
+
+        /* HERO SECTION */
+        .hero{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 60px 8%;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .hero img{
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .hero h1{
+            font-size: 50px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #2b2b2b;
+        }
+
+        .hero p{
+            margin: 20px 0;
+            color: #444;
+        }
+
+        .btn{
+            padding: 12px 25px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            margin-right: 10px;
+        }
+
+        .btn-primary{
+            background: #5a2ff6;
+            color: white;
+        }
+        .btn-outline{
+            border: 2px solid #5a2ff6;
+            color: #5a2ff6;
+            background: white;
+        }
+
+        /* ABOUT */
+        .about{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 80px 8%;
+            gap: 40px;
+            align-items: center;
+        }
+        .about img{
+            width: 100%;
+            border-radius: 20px;
+        }
+        .about h2{
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .about p{
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* PRODUCTS */
+        .products{
+            padding: 60px 8%;
+            text-align: center;
+        }
+        .products h2{
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .product-grid{
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 30px;
+        }
+
+        .product-card{
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s ease;
+        }
+        .product-card:hover{
+            transform: translateY(-8px);
+        }
+        .product-card img{
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+        }
+
+        .product-card h3{
+            margin-top: 15px;
+            font-size: 20px;
+        }
+
+        .product-card p{
+            color: #5a2ff6;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .add-btn{
+            background: #5a2ff6;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 30px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        /* FORM */
+        .register{
+            padding: 70px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .register-card{
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .register-card input{
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #bbb;
+            margin-bottom: 15px;
+        }
+
+        .register-card button{
+            width: 100%;
+            padding: 12px;
+            background: #5a2ff6;
+            border-radius: 10px;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+
+        /* FOOTER */
+        footer{
+            background: #2b2b2b;
+            color: white;
+            padding: 40px 8%;
+        }
+
+    </style>
 </head>
+
 <body>
-    <header class="header">
-        <nav>
-            <h1>Furni.</h1>
-            <div class="bars"><i class="fa-solid fa-bars"></i></div>
-        
-        <div class="navigation-bar">
-            <ul>
-                <li><a href="index.html" class="link" id="active">Home</a></li>
-                <li><a href="about.html" class="link">about</a></li>
-                <li><a href="product.html" class="link">product</a></li>
-                <li><a href="contact.html" class="link margin-r">contact</a></li>
-            </ul>
 
-        </div>
-        
+    <!-- NAV -->
+    <nav>
+        <h1>Furni.</h1>
+        <ul>
+            <li><a id="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </nav>
-    <div class="bage">
-        <div class="home-bage-img">
-            <img src="img/couch.png" alt="" srcset="" class="home-img" width="800px">
-           </div>
-        <div class="contacts">
-            <h1>Modern Interior Design <br>Studio</h1>
-            <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac <br> aliquet velit. 
-                Aliquam vulputate velit imperdiet dolor .</p>
-            <button class="butoon1">Shop-Now</button>
-            <button class="butoon2">see-or-more</button>
-        </div>
-        </div>
-        <!--toggle-->
-    
-       
-    
-    </header>
-    <!--ABOUT-->
-    <section>
-    <div class="abou-img">
-        <img src="img/why-choose-us-img.jpg" alt="" srcset="" width="500px">
-    </div>
-    <div class="abot-contacts">
-        <h1>About-us</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
 
-    </div>
-    <div class="tex-about">
-        <h1>welcome furni</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam praesentium numquam, <br> ipsa voluptatibus unde quis 
-             perspiciatis obcaecati molestiae animi inventore eum, consectetur <br> vitae nihil sit delectus, aspernatur possimus quaerat repudiandae?</p>
-             <button class="abou-btn1">Shop-Now</button>
-             
-    </div>
-</section>
-<div class="product">
-    <div class="text">
-        <h1>Product</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </div>
-   
+    <!-- HERO -->
+    <section class="hero">
+        <div>
+            <h1>Modern Interior Design Studio</h1>
+            <p>Your home deserves elegant and comfortable furniture crafted with modern design.</p>
+            <button class="btn btn-primary">Shop Now</button>
+            <button class="btn btn-outline">See More</button>
+        </div>
+        <img src="img/couch.png" alt="">
+    </section>
 
-    <div class="box1">
-    <div class="Wrapper">
-        <div class="img">
-            <img src="img/product-1.png" alt="" srcset="" class="oimg">
-        <div class="content">
-            <h2>Nodric Chair</h2>
-            <p>$50.00</p>
-            <a href="product-details.html" class="add-to-cart">
-                <i class="fa-solid fa-plus"></i>
-            </a>
+    <!-- ABOUT -->
+    <section class="about">
+        <img src="img/why-choose-us-img.jpg">
+        <div>
+            <h2>About Us</h2>
+            <p>
+                We provide modern furniture that fits your home perfectly — 
+                designed with quality, comfort, and beauty in mind.
+            </p>
+        </div>
+    </section>
 
-        </div>
-        </div>
-    </div>
-    <!--2-->
-    <div class="Wrapper2">
-        <div class="img2">
-            <img src="img/product-2.png" alt="" srcset="" class="oimg">
-        <div class="contentn">
-            <h2>Nodric Chair</h2>
-            <p>$50.00</p>
-            <a href="product-details.html" class="add-to-cart">
-                <i class="fa-solid fa-plus"></i>
-            </a>
-        </div>
-        </div>
-    </div>
-    <!--2-->
-    
-        <div class="Wrapper1">
-            <div class="img1">
-                <img src="img/product-3.png" alt="" srcset="" class="oimg">
-                <div class="contenti">
-                    <h2>Nodric Chair</h2>
-                    <p>$50.00</p>
-                    <a href="product-details.html" class="add-to-cart">
-                        <i class="fa-solid fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-          <!--2-->
-    
-          <div class="Wrapper1">
-            <div class="img1">
-                <img src="img/product-1.png" alt="" srcset="" class="oimg">
-                <div class="contenti">
-                    <h2>Nodric Chair</h2>
-                    <p>$50.00</p>
-                    <a href="product-details.html" class="add-to-cart">
-                        <i class="fa-solid fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--qebta2-->
-    <div class="box2">
-        <div class="Wrapper">
-            <div class="img">
-                <img src="img/product-3.png" alt="" srcset="" class="oimg">
-            <div class="content">
-                <h2>Nodric Chair</h2>
+    <!-- PRODUCTS -->
+    <section class="products">
+        <h2>Our Products</h2>
+        <p>Modern chairs, quality materials, elegant designs.</p>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="img/product-1.png">
+                <h3>Nordic Chair</h3>
                 <p>$50.00</p>
-                <a href="product-details.html" class="add-to-cart">
-                    <i class="fa-solid fa-plus"></i>
-                </a>
+                <a class="add-btn" href="#">Add to cart</a>
             </div>
+
+            <div class="product-card">
+                <img src="img/product-2.png">
+                <h3>Office Chair</h3>
+                <p>$65.00</p>
+                <a class="add-btn" href="#">Add to cart</a>
             </div>
+
+            <div class="product-card">
+                <img src="img/product-3.png">
+                <h3>Executive Chair</h3>
+                <p>$95.00</p>
+                <a class="add-btn" href="#">Add to cart</a>
+            </div>
+
         </div>
-        <!--2-->
-        <div class="Wrapper2">
-            <div class="img2">
-                <img src="img/4.avif" alt="" srcset="" class="oimg">
-            <div class="contentn">
-                <h2>Nodric Chair</h2>
-                <p>$50.00</p>
-                <a href="product-details.html" class="add-to-cart">
-                    <i class="fa-solid fa-plus"></i>
-                </a>
-            </div>
-            </div>
-        </div>
-        <!--2-->
-        
-            <div class="Wrapper1">
-                <div class="img1">
-                    <img src="img/6.avif" alt="" srcset="" class="oimg">
-                    <div class="contenti">
-                        <h2>Nodric Chair</h2>
-                        <p>$50.00</p>
-                        <a href="product-details.html" class="add-to-cart">
-                            <i class="fa-solid fa-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-              <!--2-->
-        
-              <div class="Wrapper1">
-                <div class="img1">
-                    <img src="img/9.avif" alt="" srcset="" class="oimg">
-                    <div class="contenti">
-                        <h2>Nodric Chair</h2>
-                        <p>$50.00</p>
-                        <a href="product-details.html" class="add-to-cart">
-                            <i class="fa-solid fa-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    </section>
+
+    <!-- REGISTER -->
+    <section class="register">
+        <div class="register-card">
+            <h2>Register</h2>
+            <input type="text" placeholder="Enter Username">
+            <input type="email" placeholder="Enter Email">
+            <input type="password" placeholder="Enter Password">
+            <input type="password" placeholder="Confirm Password">
+            <button>Submit</button>
         </div>
 
-</div>
-    <!--contact-->
-    
-    <div class="contactsss">
-        <div class="c-in">
-            
-            
-            <h1>Registration
-            </h1>
-            <label for="">Username</label> <br>
-            <input type="text" class="name" required placeholder="Enter a name"> <br>
-            <label for="">Email</label><br>
-            <input type="text" class="Email" placeholder="Enter A Email" required> <br>
-            <label for="">password</label><br>
-            <input type="text" class="password" required placeholder="Enter apassword"><br>
-            <label for="">confirm password</label>
-            <input type="text" class="confirm" required placeholder="Enter a confirm-password"><br>
+        <img src="img/img-grid-1.jpg" width="100%">
+    </section>
 
-           
-            <button type="submit" class="submit">Submit</button>
-        
-        </div>
-       <div class="goagle-map">
-       
-        <img src="img/img-grid-1.jpg" alt="" srcset="" width="400px">
-       </div>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Furni. All rights reserved.</p>
+    </footer>
 
-    </div>
-   
-      
-       <!--END CONTACT-->
-       <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>company</h4>
-                    <ul>
-                        <li><a href="about.html">about us</a></li>
-                        <li><a href="#">our services</a></li>
-                        <li><a href="#">privacy policy</a></li>
-                        <li><a href="#">affiliate program</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>get help</h4>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">shipping</a></li>
-                        <li><a href="#">returns</a></li>
-                        <li><a href="#">order status</a></li>
-                        <li><a href="#">payment options</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>online shop</h4>
-                    <ul>
-                        <li><a href="#">watch</a></li>
-                        <li><a href="#">bag</a></li>
-                        <li><a href="#">shoes</a></li>
-                        <li><a href="#">dress</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>follow us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-   </footer>
-
-   <script src="script.js"></script>
 </body>
 </html>
